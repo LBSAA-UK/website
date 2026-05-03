@@ -70,7 +70,7 @@ export default async function PortalPage() {
                 <div style={{ fontSize: '0.85rem', color: 'var(--ink-soft)', margin: '8px 0' }}>
                   {doc.description}
                 </div>
-                <a href={doc.file_url} className="eyebrow" style={{ marginBottom: 0, fontSize: '0.65rem' }}>
+                <a href={doc.file_url} target="_blank" rel="noopener noreferrer" className="eyebrow" style={{ marginBottom: 0, fontSize: '0.65rem' }}>
                   Download Document &rarr;
                 </a>
               </div>
