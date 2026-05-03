@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About · LBSAA United Kingdom Chapter</title>
+<meta name="description" content="The story, mandate, governance and Executive Committee of the LBSAA UK Chapter.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="About · LBSAA United Kingdom Chapter">
+<meta property="og:description" content="The story, mandate, governance and Executive Committee of the LBSAA UK Chapter.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+  .story-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 80px;
+    align-items: start;
+  }
+  .story-side {
+    position: sticky;
+    top: 120px;
+  }
+  .story-side .figure {
+    aspect-ratio: 4 / 5;
+    margin-bottom: 24px;
+  }
+  .story-side dt {
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 4px;
+  }
+  .story-side dd {
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    color: var(--navy);
+    margin: 0 0 18px;
+  }
+  .story-body p { font-size: 1.05rem; line-height: 1.75; }
+  .story-body p:first-of-type::first-letter {
+    font-family: var(--serif);
+    font-size: 4.2rem;
+    line-height: 0.9;
+    float: left;
+    margin: 6px 12px 0 0;
+    color: var(--navy);
+    font-weight: 500;
+  }
+  .pullquote {
+    font-family: var(--serif);
+    font-size: 1.6rem;
+    line-height: 1.45;
+    color: var(--navy);
+    font-style: italic;
+    border-left: 2px solid var(--gold);
+    padding: 8px 0 8px 28px;
+    margin: 36px 0;
+  }
+
+  /* Exco grid */
+  .exco {
+    background: var(--cream);
+  }
+  .exco-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-top: 48px;
+  }
+  .exco-card {
+    background: var(--paper);
+    border: 1px solid var(--rule-soft);
+    padding: 0;
+  }
+  .exco-card .silhouette {
+    aspect-ratio: 4 / 5;
+    background:
+      repeating-linear-gradient(135deg,
+        rgba(15, 30, 61, 0.035) 0px,
+        rgba(15, 30, 61, 0.035) 1px,
+        transparent 1px,
+        transparent 14px),
+      var(--cream-deep);
+    border-bottom: 1px solid var(--rule-soft);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .exco-card .monogram {
+    width: 38%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 1px solid var(--navy);
+    background: var(--paper);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--serif);
+    font-size: 2.4rem;
+    color: var(--navy);
+    letter-spacing: 0.04em;
+    font-weight: 500;
+  }
+  .exco-card .silhouette::after {
+    content: "Portrait to follow";
+    position: absolute;
+    bottom: 14px;
+    left: 0; right: 0;
+    text-align: center;
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+  }
+  .exco-card .body {
+    padding: 24px 26px 28px;
+  }
+  .exco-card .role {
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .exco-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+  }
+  .exco-card .programme {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--ink-muted);
+    font-size: 0.95rem;
+    margin-bottom: 14px;
+  }
+  .exco-card p { font-size: 0.9rem; margin: 0; }
+  .tbc {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    background: var(--cream-deep);
+    color: var(--ink-muted);
+    padding: 2px 8px;
+    margin-left: 6px;
+    border: 1px solid var(--rule);
+    text-transform: uppercase;
+  }
+
+  /* Governance */
+  .governance-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+  .gov-cell {
+    padding: 36px 32px;
+    border-right: 1px solid var(--rule);
+  }
+  .gov-cell:last-child { border-right: 0; }
+  .gov-cell dt {
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 10px;
+  }
+  .gov-cell dd {
+    font-family: var(--serif);
+    font-size: 1.4rem;
+    color: var(--navy);
+    margin: 0 0 12px;
+    line-height: 1.3;
+  }
+  .gov-cell p { font-size: 0.9rem; margin: 0; }
+
+  /* Timeline */
+  .timeline {
+    border-top: 1px solid var(--rule);
+    margin-top: 48px;
+  }
+  .tl-row {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 48px;
+    padding: 32px 0;
+    border-bottom: 1px solid var(--rule-soft);
+  }
+  .tl-row .when {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.4rem;
+    color: var(--gold);
+  }
+  .tl-row h4 { font-size: 1.3rem; margin-bottom: 6px; }
+  .tl-row p { margin: 0; font-size: 0.95rem; }
+
+  @media (max-width: 880px) {
+    .story-grid { grid-template-columns: 1fr; gap: 40px; }
+    .story-side { position: static; }
+    .exco-grid { grid-template-columns: 1fr; }
+    .governance-grid { grid-template-columns: 1fr; }
+    .gov-cell { border-right: 0; border-bottom: 1px solid var(--rule); }
+    .tl-row { grid-template-columns: 1fr; gap: 8px; }
+  }
+</style>
+</head>
+<body>
+
+<div id="site-header-slot"></div>
+
+<main id="main">
+
+<section class="page-hero">
+  <div class="inner">
+    <div class="crumb"><a href="index.html">Home</a> &nbsp;/&nbsp; About</div>
+    <h1>The Chapter, its mandate and the people who run it.</h1>
+    <p class="lede">Founded in 2024 to gather Lagos Business School alumni resident in the United Kingdom — and to extend the work of the parent association into a British setting.</p>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="section">
+  <div class="container">
+    <div class="story-grid">
+      <aside class="story-side">
+        <div class="figure photo" data-label="CHAPTER GROUP, 2024"></div>
+        <dl>
+          <dt>Established</dt>
+          <dd>2024</dd>
+          <dt>Legal status</dt>
+          <dd>Unincorporated Association<br><span style="font-family: var(--sans); font-size: 0.85rem; color: var(--ink-muted);">CIO transition planned, month 12</span></dd>
+          <dt>Members</dt>
+          <dd>140+</dd>
+          <dt>Affiliation</dt>
+          <dd>LBSAA (Lagos)</dd>
+        </dl>
+      </aside>
+      <div class="story-body">
+        <div class="eyebrow">Chapter Story</div>
+        <h2 style="margin-bottom: 28px;">A regional chapter, in good standing with Lagos.</h2>
+        <p>The United Kingdom Chapter of the Lagos Business School Alumni Association was established in 2024 to bring together LBS graduates resident in Britain. Its founding was a long time in the making: the UK has been one of the most established communities of LBS alumni outside Nigeria for over a decade, and the case for a formal chapter — one that could speak with the parent body, host visiting faculty, and run its own programme of events — had been put to successive Excos in Lagos.</p>
+        <p>The Chapter draws its charter from the parent LBSAA, and ultimately from Lagos Business School and Pan-Atlantic University. We are not a social organisation, and we are not an independent institution. We are a regional vehicle for alumni effort, governed by the parent association's three-pillar mandate and an elected United Kingdom Executive Committee.</p>
+        <div class="pullquote">"The case for a UK Chapter was always less about creating something new than about recognising what was already happening — alumni in Britain had been gathering for years, and a formal Chapter let us do it well."</div>
+        <p>In its first year the Chapter has registered as an Unincorporated Association under English law, opened a chapter bank account, drafted a constitution aligned to the parent body's, and run three formal members' events in London with a fourth planned in Manchester. A transition to Charitable Incorporated Organisation status is planned for the Chapter's first anniversary, subject to membership approval and Charity Commission registration.</p>
+        <p>Day-to-day, the Chapter is run by a six-member Executive Committee, elected by the membership at the AGM. The Exco meets monthly, reports to the membership annually, and corresponds regularly with the parent association in Lagos.</p>
+
+        <div class="timeline">
+          <div class="tl-row">
+            <div class="when">2024</div>
+            <div>
+              <h4>Chapter founded</h4>
+              <p>Inaugural meeting in London, election of the first Executive Committee, registration as an Unincorporated Association under English law.</p>
+            </div>
+          </div>
+          <div class="tl-row">
+            <div class="when">2025</div>
+            <div>
+              <h4>First full year of programming</h4>
+              <p>Three formal members' events delivered, draft constitution circulated, parent body affiliation confirmed in writing.</p>
+            </div>
+          </div>
+          <div class="tl-row">
+            <div class="when">2026</div>
+            <div>
+              <h4>CIO transition (planned)</h4>
+              <p>Application for Charitable Incorporated Organisation status with the Charity Commission for England and Wales.</p>
+            </div>
+          </div>
+          <div class="tl-row" style="border-bottom: 0;">
+            <div class="when">2027 →</div>
+            <div>
+              <h4>Regional sub-chapters</h4>
+              <p>Manchester and Edinburgh sub-chapters under consideration, subject to membership density and volunteer capacity.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MANDATE EXPANDED -->
+<section class="section" style="background: var(--cream); padding-top: 80px;">
+  <div class="container">
+    <div class="eyebrow">Mandate</div>
+    <h2 style="margin-bottom: 48px; max-width: 800px;">Three pillars, inherited from the parent association without amendment.</h2>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;">
+      <div style="border-top: 2px solid var(--navy); padding-top: 24px;">
+        <div style="font-family: var(--serif); font-style: italic; font-size: 1.2rem; color: var(--gold); margin-bottom: 14px;">Pillar i.</div>
+        <h3 style="font-size: 1.8rem; margin-bottom: 14px;">Promote</h3>
+        <p style="font-size: 0.95rem;">Continuous education and stronger relationships among UK members. The Chapter convenes alumni for fellowship, peer learning and visits from LBS faculty.</p>
+      </div>
+      <div style="border-top: 2px solid var(--navy); padding-top: 24px;">
+        <div style="font-family: var(--serif); font-style: italic; font-size: 1.2rem; color: var(--gold); margin-bottom: 14px;">Pillar ii.</div>
+        <h3 style="font-size: 1.8rem; margin-bottom: 14px;">Support</h3>
+        <p style="font-size: 0.95rem;">The aims and objectives of LBS and the parent LBSAA. The Chapter represents the school in the UK and channels alumni effort to its priorities.</p>
+      </div>
+      <div style="border-top: 2px solid var(--navy); padding-top: 24px;">
+        <div style="font-family: var(--serif); font-style: italic; font-size: 1.2rem; color: var(--gold); margin-bottom: 14px;">Pillar iii.</div>
+        <h3 style="font-size: 1.8rem; margin-bottom: 14px;">Service</h3>
+        <p style="font-size: 0.95rem;">To society, especially in matters of public and private management — bringing the LBS standard of professional ethics into the United Kingdom.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXCO -->
+<section class="section exco" id="exco" style="background: var(--paper);">
+  <div class="container">
+    <div class="eyebrow">Executive Committee</div>
+    <h2 style="max-width: 700px;">The 2026 Exco.</h2>
+    <p style="max-width: 580px; margin-top: 16px;">Elected by the membership at the AGM. The committee meets monthly and reports annually to members and to the parent body.</p>
+    <div class="sample-strip" style="margin: 32px 0 0;"><strong>In confirmation:</strong> portfolios and biographies are being finalised. Names below are correct; portraits, programmes and full bios will be added before public launch.</div>
+    <div class="exco-grid">
+      <article class="exco-card">
+        <div class="silhouette"><div class="monogram" aria-hidden="true">S</div></div>
+        <div class="body">
+          <div class="role">President / Chair</div>
+          <h3>Stella</h3>
+          <div class="programme">LBS · Programme &amp; Year TBC</div>
+          <p>Stella chairs the Executive Committee and represents the Chapter to the parent association in Lagos. <em>Full bio to follow.</em></p>
+        </div>
+      </article>
+      <article class="exco-card">
+        <div class="silhouette"><div class="monogram" aria-hidden="true">NJ</div></div>
+        <div class="body">
+          <div class="role">Secretary</div>
+          <h3>Nkem Joseph-Palmer</h3>
+          <div class="programme">LBS · Programme &amp; Year TBC</div>
+          <p>Nkem is the Chapter Secretary, with responsibility for governance, minutes and the membership record. <em>Full bio to follow.</em></p>
+        </div>
+      </article>
+      <article class="exco-card">
+        <div class="silhouette"><div class="monogram" aria-hidden="true">W</div></div>
+        <div class="body">
+          <div class="role">Officer <span class="tbc">Role TBC</span></div>
+          <h3>Winston</h3>
+          <div class="programme">LBS · Programme &amp; Year TBC</div>
+          <p>Winston serves on the Executive Committee. Portfolio and bio to be confirmed.</p>
+        </div>
+      </article>
+      <article class="exco-card">
+        <div class="silhouette"><div class="monogram" aria-hidden="true">K</div></div>
+        <div class="body">
+          <div class="role">Officer <span class="tbc">Role TBC</span></div>
+          <h3>Kim</h3>
+          <div class="programme">LBS · Programme &amp; Year TBC</div>
+          <p>Kim serves on the Executive Committee. Portfolio and bio to be confirmed.</p>
+        </div>
+      </article>
+      <article class="exco-card">
+        <div class="silhouette"><div class="monogram" aria-hidden="true">R</div></div>
+        <div class="body">
+          <div class="role">Officer <span class="tbc">Role TBC</span></div>
+          <h3>Rachel</h3>
+          <div class="programme">LBS · Programme &amp; Year TBC</div>
+          <p>Rachel serves on the Executive Committee. Portfolio and bio to be confirmed.</p>
+        </div>
+      </article>
+      <article class="exco-card">
+        <div class="silhouette"><div class="monogram" aria-hidden="true">JM</div></div>
+        <div class="body">
+          <div class="role">Officer <span class="tbc">Role TBC</span></div>
+          <h3>Dr John Mukoro</h3>
+          <div class="programme">LBS · Programme &amp; Year TBC</div>
+          <p>Dr Mukoro serves on the Executive Committee and holds the Chapter's digital credentials. Portfolio and bio to be confirmed.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- GOVERNANCE -->
+<section class="section" style="padding-top: 0;">
+  <div class="container">
+    <div class="eyebrow">Governance</div>
+    <h2 style="margin-bottom: 48px; max-width: 700px;">How the Chapter is structured and accountable.</h2>
+    <dl class="governance-grid">
+      <div class="gov-cell">
+        <dt>Legal form</dt>
+        <dd>Unincorporated Association</dd>
+        <p>The Chapter currently operates as an Unincorporated Association under English law, governed by its constitution and the parent body's mandate.</p>
+      </div>
+      <div class="gov-cell">
+        <dt>Future status</dt>
+        <dd>Charitable Incorporated Organisation</dd>
+        <p>A transition to CIO status is planned at the twelve-month mark, subject to membership approval and Charity Commission registration.</p>
+      </div>
+      <div class="gov-cell">
+        <dt>Reporting</dt>
+        <dd>Annual report &amp; AGM</dd>
+        <p>The Exco reports to members at the Annual General Meeting and to the parent association in Lagos through quarterly correspondence.</p>
+      </div>
+    </dl>
+    <div style="display: flex; gap: 20px; margin-top: 40px; flex-wrap: wrap;">
+      <a href="#" class="btn btn-outline">Constitution (PDF) <span class="arrow">→</span></a>
+      <a href="#" class="btn btn-outline">Annual Report 2025 (PDF) <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- AFFILIATION -->
+<section class="cta-band" style="background: var(--navy); color: var(--cream); padding: 110px 32px; position: relative; overflow: hidden;">
+  <div class="container" style="text-align: center; position: relative;">
+    <img src="assets/lbs-logo.png" alt="Lagos Business School" style="height: 80px; width: auto; margin: 0 auto 32px; display: block; filter: brightness(0) invert(1); opacity: 0.95;">
+    <div class="eyebrow" style="color: var(--gold-soft); justify-content: center;">In good standing with</div>
+    <h2 style="color: var(--cream); font-weight: 400; max-width: 740px; margin: 0 auto 22px;">The <em style="color: var(--gold-soft); font-style: italic;">Lagos Business School Alumni Association</em>, parent body.</h2>
+    <p style="color: rgba(245, 239, 227, 0.8); max-width: 560px; margin: 0 auto 36px;">Our charter, our mandate and our standards are inherited from the LBSAA in Lagos. We exist to extend its work into the United Kingdom.</p>
+    <a href="#" class="btn btn-ghost">Visit LBSAA Lagos <span class="arrow">→</span></a>
+  </div>
+</section>
+
+</main>
+
+<div id="site-footer-slot"></div>
+
+<script src="shared.js" data-page="about"></script>
+</body>
+</html>

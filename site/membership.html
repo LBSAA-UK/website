@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Membership · LBSAA United Kingdom Chapter</title>
+<meta name="description" content="Eligibility, benefits and application for the LBSAA UK Chapter.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="Membership · LBSAA United Kingdom Chapter">
+<meta property="og:description" content="Eligibility, benefits and application for the LBSAA UK Chapter.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+  .eligibility {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 80px;
+    align-items: start;
+  }
+  .elig-list {
+    list-style: none;
+    padding: 0; margin: 32px 0 0;
+    border-top: 1px solid var(--rule);
+  }
+  .elig-list li {
+    padding: 22px 0;
+    border-bottom: 1px solid var(--rule-soft);
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 20px;
+    align-items: start;
+  }
+  .elig-list .num {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.4rem;
+    color: var(--gold);
+  }
+  .elig-list h4 { font-size: 1.15rem; margin-bottom: 6px; }
+  .elig-list p { font-size: 0.95rem; margin: 0; }
+
+  /* Benefits */
+  .benefits {
+    background: var(--cream);
+  }
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+    border: 1px solid var(--rule);
+    background: var(--paper);
+    margin-top: 48px;
+  }
+  .benefit {
+    padding: 36px 36px 32px;
+    border-right: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+  .benefit:nth-child(2n) { border-right: 0; }
+  .benefit:nth-last-child(-n+2) { border-bottom: 0; }
+  .benefit .num {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.16em;
+    color: var(--gold);
+    margin-bottom: 14px;
+  }
+  .benefit h4 { font-size: 1.4rem; margin-bottom: 10px; }
+  .benefit p { font-size: 0.95rem; margin: 0; }
+
+  /* Process */
+  .process {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin-top: 48px;
+    border-top: 1px solid var(--rule);
+  }
+  .step {
+    padding: 32px 28px 28px;
+    border-right: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+  .step:last-child { border-right: 0; }
+  .step .step-num {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 2.4rem;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+  .step h4 { font-size: 1.2rem; margin-bottom: 8px; }
+  .step p { font-size: 0.9rem; margin: 0; }
+
+  /* Apply form */
+  .apply-block {
+    background: var(--paper);
+  }
+  .apply-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 80px;
+    align-items: start;
+  }
+  .apply-side h2 { margin-bottom: 18px; }
+  .apply-side .lede { margin-bottom: 28px; }
+  .apply-side dl { border-top: 1px solid var(--rule); padding-top: 20px; margin-top: 28px; }
+  .apply-side dt {
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 4px;
+    margin-top: 14px;
+  }
+  .apply-side dd {
+    margin: 0;
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    color: var(--navy);
+  }
+  .apply-form {
+    background: var(--cream);
+    padding: 48px 48px 40px;
+    border: 1px solid var(--rule);
+  }
+  .apply-form h3 { font-size: 1.6rem; margin-bottom: 6px; }
+  .apply-form .form-sub {
+    font-size: 0.85rem;
+    color: var(--ink-muted);
+    margin-bottom: 28px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .form-success {
+    display: none;
+    text-align: center;
+    padding: 32px 0;
+  }
+  .form-success.show { display: block; }
+  .form-success.show ~ form { display: none; }
+  .form-success .seal {
+    width: 56px; height: 56px;
+    border: 1.5px solid var(--gold);
+    border-radius: 50%;
+    margin: 0 auto 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--serif);
+    font-size: 1.6rem;
+    color: var(--gold);
+    font-style: italic;
+  }
+  .form-success h3 { margin-bottom: 12px; }
+  .form-success p { font-size: 0.95rem; }
+
+  /* FAQ */
+  .faq-block { background: var(--cream); }
+  .faq {
+    border-top: 1px solid var(--rule);
+    margin-top: 32px;
+  }
+  details {
+    border-bottom: 1px solid var(--rule-soft);
+    padding: 24px 0;
+  }
+  summary {
+    cursor: pointer;
+    font-family: var(--serif);
+    font-size: 1.3rem;
+    color: var(--navy);
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::after {
+    content: "+";
+    font-family: var(--serif);
+    color: var(--gold);
+    font-size: 1.6rem;
+    transition: transform 0.2s;
+  }
+  details[open] summary::after { content: "−"; }
+  details p { margin: 16px 0 0; max-width: 700px; }
+
+  @media (max-width: 880px) {
+    .eligibility, .apply-grid { grid-template-columns: 1fr; gap: 40px; }
+    .benefits-grid { grid-template-columns: 1fr; }
+    .benefit { border-right: 0; }
+    .benefit:nth-last-child(-n+2) { border-bottom: 1px solid var(--rule); }
+    .benefit:last-child { border-bottom: 0; }
+    .process { grid-template-columns: 1fr 1fr; }
+    .apply-form { padding: 32px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<div id="site-header-slot"></div>
+
+<main id="main">
+
+<section class="page-hero">
+  <div class="inner">
+    <div class="crumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Membership</div>
+    <h1>Join the United Kingdom Chapter.</h1>
+    <p class="lede">Open to MBA graduates, Executive Education alumni and full-time faculty of Lagos Business School, resident in the United Kingdom.</p>
+  </div>
+</section>
+
+<!-- ELIGIBILITY -->
+<section class="section">
+  <div class="container">
+    <div class="eligibility">
+      <div>
+        <div class="eyebrow">Eligibility</div>
+        <h2>Who can join.</h2>
+        <p style="margin-top: 24px;">Membership of the United Kingdom Chapter follows the eligibility criteria of the parent association. You should hold one of the qualifications below and be currently resident in the United Kingdom.</p>
+      </div>
+      <div>
+        <ol class="elig-list">
+          <li>
+            <div class="num">i.</div>
+            <div>
+              <h4>MBA graduates of Lagos Business School</h4>
+              <p>Full-time, Modular and Executive MBA alumni of all years, in good standing with the parent association.</p>
+            </div>
+          </li>
+          <li>
+            <div class="num">ii.</div>
+            <div>
+              <h4>Executive Education alumni</h4>
+              <p>Graduates of LBS senior management, advanced management and chief executive programmes.</p>
+            </div>
+          </li>
+          <li>
+            <div class="num">iii.</div>
+            <div>
+              <h4>Full-time faculty of LBS</h4>
+              <p>Current and emeritus full-time faculty members of Lagos Business School.</p>
+            </div>
+          </li>
+          <li>
+            <div class="num">iv.</div>
+            <div>
+              <h4>Residence in the United Kingdom</h4>
+              <p>Members must be currently resident in England, Scotland, Wales or Northern Ireland. Visiting alumni are warmly welcome at chapter events.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="section benefits">
+  <div class="container">
+    <div class="eyebrow">What you receive</div>
+    <h2 style="max-width: 720px;">Member benefits, written for the United Kingdom.</h2>
+    <p style="max-width: 580px; margin-top: 16px;">In addition to the parent association's standing benefits, the Chapter delivers a UK-specific programme of events, partnerships and member services.</p>
+    <div class="benefits-grid">
+      <div class="benefit">
+        <div class="num">01 / Convening</div>
+        <h4>UK-based members' events</h4>
+        <p>Three to five formal events each year — receptions, dinners, and visits from LBS faculty passing through London.</p>
+      </div>
+      <div class="benefit">
+        <div class="num">02 / Programme</div>
+        <h4>Access to parent programmes</h4>
+        <p>Priority registration for the LBSAA Annual Conference in Lagos and parent-body Executive Education events open to members.</p>
+      </div>
+      <div class="benefit">
+        <div class="num">03 / Network</div>
+        <h4>UK alumni directory</h4>
+        <p>A members-only directory of UK-based alumni, searchable by sector, programme and region. Phase 2.</p>
+      </div>
+      <div class="benefit">
+        <div class="num">04 / Service</div>
+        <h4>Peer support &amp; introductions</h4>
+        <p>Practical peer support for relocation, school placement, and professional introductions across the UK alumni community.</p>
+      </div>
+      <div class="benefit">
+        <div class="num">05 / Voice</div>
+        <h4>Vote at the AGM</h4>
+        <p>Voting rights at the Annual General Meeting and the right to stand for election to the Executive Committee after twelve months of membership.</p>
+      </div>
+      <div class="benefit">
+        <div class="num">06 / Publications</div>
+        <h4>Footprints &amp; Littleprints</h4>
+        <p>Continued access to <em>Footprints</em> magazine (bi-annual) and <em>Littleprints</em> (monthly) from the parent association.</p>
+      </div>
+    </div>
+    <div style="display: flex; gap: 20px; margin-top: 36px; flex-wrap: wrap;">
+      <a href="#" class="btn btn-outline">Full Benefits Schedule (PDF) <span class="arrow">→</span></a>
+      <a href="#" class="btn btn-outline">Parent Body Benefits (PDF) <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section">
+  <div class="container">
+    <div class="eyebrow">How to join</div>
+    <h2 style="max-width: 700px;">A four-step process. Most applications are confirmed within ten working days.</h2>
+    <div class="process">
+      <div class="step">
+        <div class="step-num">i.</div>
+        <h4>Apply</h4>
+        <p>Complete the application form below with your LBS programme, year and current UK address.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">ii.</div>
+        <h4>Verify</h4>
+        <p>The Secretary verifies your standing with the parent association in Lagos. Usually 5–7 days.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">iii.</div>
+        <h4>Welcome</h4>
+        <p>You receive a welcome note from the President and access to the members' communications channel.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">iv.</div>
+        <h4>Attend</h4>
+        <p>Your first event invitation arrives. Members are encouraged to attend at least one event in their first year.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPLY FORM -->
+<section class="section apply-block" id="apply">
+  <div class="container">
+    <div class="apply-grid">
+      <div class="apply-side">
+        <div class="eyebrow">Application</div>
+        <h2>Begin your application.</h2>
+        <p class="lede">Membership for the 2026 year is open. Dues are confirmed by the Exco on a year-by-year basis.</p>
+        <dl>
+          <dt>Dues, 2026</dt>
+          <dd>To be confirmed — likely free for parent-association financial members</dd>
+          <dt>Processing time</dt>
+          <dd>5–10 working days</dd>
+          <dt>Questions</dt>
+          <dd><a href="contact.html">membership@lbsaa.uk</a></dd>
+        </dl>
+      </div>
+      <div class="apply-form">
+        <div class="form-success" id="successMsg">
+          <div class="seal">✓</div>
+          <h3>Application received.</h3>
+          <p>Thank you. The Secretary will be in touch within ten working days. A copy of your application has been sent to the email address you provided.</p>
+        </div>
+        <form onsubmit="event.preventDefault(); document.getElementById('successMsg').classList.add('show'); window.scrollTo({top: this.offsetTop - 100, behavior: 'smooth'});">
+          <h3>Membership application</h3>
+          <div class="form-sub">All fields are required unless marked optional.</div>
+
+          <div class="field-row">
+            <div class="field"><label>First name</label><input type="text" required></div>
+            <div class="field"><label>Surname</label><input type="text" required></div>
+          </div>
+          <div class="field-row">
+            <div class="field"><label>Email address</label><input type="email" required></div>
+            <div class="field"><label>Mobile (optional)</label><input type="tel"></div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label>LBS programme</label>
+              <select required>
+                <option value="">Select…</option>
+                <option>Full-time MBA</option>
+                <option>Modular MBA</option>
+                <option>Executive MBA</option>
+                <option>Senior Management Programme</option>
+                <option>Advanced Management Programme</option>
+                <option>Chief Executive Programme</option>
+                <option>Faculty</option>
+                <option>Other Executive Education</option>
+              </select>
+            </div>
+            <div class="field"><label>Year of graduation</label><input type="number" min="1990" max="2026" placeholder="e.g. 2015" required></div>
+          </div>
+          <div class="field"><label>Current employer &amp; role</label><input type="text" placeholder="e.g. Head of Strategy, FTSE 250 firm" required></div>
+          <div class="field-row">
+            <div class="field"><label>UK city of residence</label><input type="text" placeholder="London, Manchester…" required></div>
+            <div class="field">
+              <label>How did you hear about us?</label>
+              <select required>
+                <option value="">Select…</option>
+                <option>Parent LBSAA / Lagos</option>
+                <option>Existing UK Chapter member</option>
+                <option>LinkedIn</option>
+                <option>Search</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="field"><label>Anything else? (optional)</label><textarea placeholder="If there is anything specific you would like the Exco to know."></textarea></div>
+
+          <label class="checkbox">
+            <input type="checkbox" required>
+            <span>I consent to the United Kingdom Chapter holding the personal data above for the purpose of administering my membership, in accordance with the <a href="#">privacy policy</a>. I understand I may withdraw consent at any time.</span>
+          </label>
+
+          <button type="submit" class="btn" style="width: 100%; justify-content: center;">Submit application <span class="arrow">→</span></button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section faq-block">
+  <div class="container container-narrow">
+    <div class="eyebrow">Questions</div>
+    <h2>Frequently asked.</h2>
+    <div class="faq">
+      <details open>
+        <summary>Are there membership dues?</summary>
+        <p>Dues are confirmed by the Executive Committee on a year-by-year basis. For 2026 the position is being finalised; the working assumption is that membership is free for those who are already financial members of the parent association in Lagos.</p>
+      </details>
+      <details>
+        <summary>I am a Nigerian alumnus visiting the UK temporarily — can I attend events?</summary>
+        <p>Yes. Visiting alumni are warmly welcome at chapter events. Formal membership requires UK residence, but our events are open to all LBS alumni in the country at the time, subject to capacity.</p>
+      </details>
+      <details>
+        <summary>How is my standing with the parent association verified?</summary>
+        <p>The Secretary corresponds with the parent LBSAA in Lagos to confirm your standing. The verification step is the longest part of the process; we ask for your patience, particularly for graduates of the modular and executive programmes whose records can take a little longer to retrieve.</p>
+      </details>
+      <details>
+        <summary>What happens to my data?</summary>
+        <p>Your data is held by the United Kingdom Chapter for the purpose of administering your membership. We do not share it with third parties. The Chapter will register with the Information Commissioner's Office (ICO) as a data controller in due course. See our <a href="#">privacy policy</a> for the full position.</p>
+      </details>
+      <details>
+        <summary>When can I stand for the Executive Committee?</summary>
+        <p>Members in good standing for at least twelve months are eligible to stand at the Annual General Meeting, which is held each July.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div id="site-footer-slot"></div>
+
+<script src="shared.js" data-page="membership"></script>
+</body>
+</html>

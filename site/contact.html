@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact · LBSAA United Kingdom Chapter</title>
+<meta name="description" content="Get in touch with the LBSAA UK Chapter Executive Committee.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="Contact · LBSAA United Kingdom Chapter">
+<meta property="og:description" content="Get in touch with the LBSAA UK Chapter Executive Committee.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 80px;
+    align-items: start;
+  }
+  .contact-side .lede { margin-bottom: 32px; }
+  .contact-side dl {
+    border-top: 1px solid var(--rule);
+  }
+  .contact-side .row {
+    padding: 22px 0;
+    border-bottom: 1px solid var(--rule-soft);
+  }
+  .contact-side dt {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 6px;
+    font-weight: 600;
+  }
+  .contact-side dd {
+    margin: 0;
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    color: var(--navy);
+    line-height: 1.4;
+  }
+  .contact-side dd a { color: var(--navy); border-bottom: 1px solid var(--gold); }
+  .contact-side dd a:hover { color: var(--gold); }
+  .contact-side dd .small {
+    display: block;
+    font-family: var(--sans);
+    font-size: 0.85rem;
+    color: var(--ink-muted);
+    font-style: normal;
+    margin-top: 4px;
+  }
+
+  .contact-form {
+    background: var(--cream);
+    padding: 48px 48px 40px;
+    border: 1px solid var(--rule);
+  }
+  .contact-form h3 { font-size: 1.7rem; margin-bottom: 6px; }
+  .contact-form .form-sub {
+    font-size: 0.85rem;
+    color: var(--ink-muted);
+    margin-bottom: 28px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .form-success {
+    display: none; text-align: center; padding: 32px 0;
+  }
+  .form-success.show { display: block; }
+  .form-success.show ~ form { display: none; }
+  .form-success .seal {
+    width: 56px; height: 56px;
+    border: 1.5px solid var(--gold);
+    border-radius: 50%;
+    margin: 0 auto 24px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--serif); font-size: 1.6rem; color: var(--gold);
+  }
+  .form-success h3 { margin-bottom: 12px; }
+
+  /* Routing strip */
+  .routing { background: var(--paper); padding-top: 0; }
+  .routing-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border: 1px solid var(--rule);
+  }
+  .route-cell {
+    padding: 32px 28px;
+    border-right: 1px solid var(--rule);
+  }
+  .route-cell:last-child { border-right: 0; }
+  .route-cell .role {
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .route-cell h4 { font-size: 1.2rem; margin-bottom: 8px; }
+  .route-cell p { font-size: 0.85rem; margin: 0 0 12px; }
+  .route-cell a {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    color: var(--navy);
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 2px;
+  }
+
+  @media (max-width: 880px) {
+    .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+    .contact-form { padding: 32px 24px; }
+    .routing-grid { grid-template-columns: 1fr; }
+    .route-cell { border-right: 0; border-bottom: 1px solid var(--rule); }
+    .route-cell:last-child { border-bottom: 0; }
+  }
+</style>
+</head>
+<body>
+
+<div id="site-header-slot"></div>
+
+<main id="main">
+
+<section class="page-hero">
+  <div class="inner">
+    <div class="crumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Contact</div>
+    <h1>Get in touch with the Chapter.</h1>
+    <p class="lede">For membership enquiries, partnership conversations, press, or anything else — please use the form below or write to the relevant Exco officer directly.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-side">
+        <div class="eyebrow">Direct contact</div>
+        <h2 style="margin-bottom: 16px;">Where to write.</h2>
+        <p class="lede">The Chapter is run by volunteer Exco members. We aim to respond within five working days.</p>
+        <dl>
+          <div class="row">
+            <dt>General enquiries</dt>
+            <dd><a href="mailto:info@lbsaa.uk">info@lbsaa.uk</a></dd>
+          </div>
+          <div class="row">
+            <dt>Membership</dt>
+            <dd><a href="mailto:membership@lbsaa.uk">membership@lbsaa.uk</a>
+              <span class="small">For new applications, status questions, and the member directory.</span>
+            </dd>
+          </div>
+          <div class="row">
+            <dt>Office of the Secretary</dt>
+            <dd><a href="mailto:secretary@lbsaa.uk">secretary@lbsaa.uk</a>
+              <span class="small">Governance, minutes, parent-body correspondence. Nkem Joseph-Palmer.</span>
+            </dd>
+          </div>
+          <div class="row">
+            <dt>Office of the President</dt>
+            <dd><a href="mailto:president@lbsaa.uk">president@lbsaa.uk</a>
+              <span class="small">Strategic and partnership matters. Stella, Chair.</span>
+            </dd>
+          </div>
+          <div class="row">
+            <dt>Press</dt>
+            <dd><a href="mailto:press@lbsaa.uk">press@lbsaa.uk</a></dd>
+          </div>
+          <div class="row">
+            <dt>Registered correspondence</dt>
+            <dd>To be confirmed
+              <span class="small">A registered address will be published once the CIO transition is complete.</span>
+            </dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="contact-form">
+        <div class="form-success" id="successMsg">
+          <div class="seal">✓</div>
+          <h3>Message sent.</h3>
+          <p>Thank you. The Exco officer responsible for your subject area will be in touch within five working days.</p>
+        </div>
+        <form onsubmit="event.preventDefault(); document.getElementById('successMsg').classList.add('show'); window.scrollTo({top: this.offsetTop - 100, behavior: 'smooth'});">
+          <h3>Send a message</h3>
+          <div class="form-sub">Your message will be routed to the relevant Exco officer based on the subject you select.</div>
+
+          <div class="field-row">
+            <div class="field"><label>Full name</label><input type="text" required></div>
+            <div class="field"><label>Email address</label><input type="email" required></div>
+          </div>
+          <div class="field">
+            <label>I am writing as</label>
+            <select required>
+              <option value="">Select…</option>
+              <option>An LBS alumnus / alumna in the UK</option>
+              <option>A prospective member (LBS alumnus visiting the UK)</option>
+              <option>A prospective sponsor or partner</option>
+              <option>Press / media</option>
+              <option>The parent association in Lagos</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Subject area (routes your message)</label>
+            <select required>
+              <option value="">Select…</option>
+              <option>Membership question</option>
+              <option>Event RSVP / question</option>
+              <option>Governance / Secretary</option>
+              <option>Partnership / sponsorship</option>
+              <option>Press enquiry</option>
+              <option>General enquiry</option>
+            </select>
+          </div>
+          <div class="field"><label>Subject line</label><input type="text" required></div>
+          <div class="field"><label>Your message</label><textarea required placeholder="Please include any relevant context the Exco officer will need."></textarea></div>
+
+          <label class="checkbox">
+            <input type="checkbox" required>
+            <span>I consent to the United Kingdom Chapter holding the personal data above for the purpose of responding to my enquiry, in accordance with the <a href="#">privacy policy</a>.</span>
+          </label>
+
+          <button type="submit" class="btn" style="width: 100%; justify-content: center;">Send message <span class="arrow">→</span></button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROUTING -->
+<section class="section routing">
+  <div class="container">
+    <div class="eyebrow">Who handles what</div>
+    <h2 style="max-width: 720px; margin-bottom: 32px;">Exco portfolios.</h2>
+    <div class="routing-grid">
+      <div class="route-cell">
+        <div class="role">President / Chair</div>
+        <h4>Stella</h4>
+        <p>Strategic direction, partnerships, parent-body relationships, public representation.</p>
+        <a href="mailto:president@lbsaa.uk">president@lbsaa.uk</a>
+      </div>
+      <div class="route-cell">
+        <div class="role">Secretary</div>
+        <h4>Nkem Joseph-Palmer</h4>
+        <p>Governance, minutes, constitution, member record, ICO correspondence.</p>
+        <a href="mailto:secretary@lbsaa.uk">secretary@lbsaa.uk</a>
+      </div>
+      <div class="route-cell">
+        <div class="role">Membership</div>
+        <h4>Exco officer (TBC)</h4>
+        <p>New applications, member status, directory, peer support introductions.</p>
+        <a href="mailto:membership@lbsaa.uk">membership@lbsaa.uk</a>
+      </div>
+      <div class="route-cell">
+        <div class="role">Events</div>
+        <h4>Exco officer (TBC)</h4>
+        <p>Programme of events, venues, RSVPs, capacity, calendar coordination.</p>
+        <a href="mailto:events@lbsaa.uk">events@lbsaa.uk</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div id="site-footer-slot"></div>
+
+<script src="shared.js" data-page="contact"></script>
+</body>
+</html>
