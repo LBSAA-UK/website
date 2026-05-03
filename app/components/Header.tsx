@@ -37,9 +37,9 @@ export default function Header() {
           <div className="utility-links">
             <Link href="/news">News</Link>
             <Link href="/contact">Contact</Link>
-            <a href="#" aria-label="Member portal (coming soon)">
+            <Link href="/portal" aria-label="Member portal">
               Member Portal &rarr;
-            </a>
+            </Link>
           </div>
         </div>
       </div>
